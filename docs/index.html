@@ -1,0 +1,222 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>static-site-cms</title>
+	<meta name="description" content="Documentation for static-site-cms">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">static-site-cms</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<h1>static-site-cms</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<a href="#static-site-cms" id="static-site-cms" style="color: inherit; text-decoration: none;">
+					<h1>Static Site CMS</h1>
+				</a>
+				<p>Static Site CMS (Content Management System) is used to generate static sites for Buildertrend clients, including homebuilders and home remodelers. Such websites are used by clients for marketing to their own customers. Buildertrend provides this CMS in the form of an admin panel, where clients can edit their site content and integrate with other Buildertrend applications, such as contact forms for lead generation, a login page, and more.</p>
+				<p>This project is meant to replace the <a href="http://contourconstructionco.com/">demo website</a> that Buildertrend shows prospective clients. That website has integrations (as iframes) to the full Buildertrend application. Please note that the demo site has some features that should not be implemented, so check with the Buildertrend contact if any questions arise!</p>
+				<p>This project is based on the Buildertrend proof of concept, which they put together as a <a href="https://github.com/SamKirkland/static-site-cms">basic prototype</a>.</p>
+				<a href="#features" id="features" style="color: inherit; text-decoration: none;">
+					<h2>Features</h2>
+				</a>
+				<p>See the <a href="readmes/MILESTONES.md">milestones document</a> for more information.</p>
+				<ul>
+					<li><input checked="" disabled="" type="checkbox"> Admin panel to edit basic JSON file that drives the site</li>
+					<li><input checked="" disabled="" type="checkbox"> API to save/retrieve JSON data<ul>
+							<li><input checked="" disabled="" type="checkbox"> This should load and save under a given domain name</li>
+							<li><input checked="" disabled="" type="checkbox"> Our actual API integration/GCP integration will be mocked in this project</li>
+							<li><input checked="" disabled="" type="checkbox"> Make get/post endpoints, but you just load/save from the local file system<ul>
+									<li><input checked="" disabled="" type="checkbox"> Make this as hacky as you want, it will be replaced!</li>
+								</ul>
+							</li>
+							<li><input disabled="" type="checkbox"> Any image/document uploads will be saved to the server separately and a link will be included in the JSON</li>
+						</ul>
+					</li>
+					<li><input disabled="" type="checkbox"> Build out initial templates in React (see Website Admin.pdf)<ul>
+							<li><input disabled="" type="checkbox"> Home, Blank, Gallery, Showcase, Blog, Login, Contact</li>
+						</ul>
+					</li>
+					<li><input disabled="" type="checkbox"> Example content for a generic template (some of these could be made into their own templates if desired)<ul>
+							<li><input disabled="" type="checkbox"> About/Employee, Floor Plan, Testimonials, Services, Privacy Policy, Process</li>
+						</ul>
+					</li>
+					<li><input disabled="" type="checkbox"> At least two themes should be available—theme name should be stored in JSON<ul>
+							<li><input disabled="" type="checkbox"> Color variations supported by themes</li>
+							<li><input disabled="" type="checkbox"> Some basic design manipulation by theme</li>
+						</ul>
+					</li>
+					<li><input disabled="" type="checkbox"> Integrations (these are just iframes)<ul>
+							<li><input disabled="" type="checkbox"> Integration with the BT login form</li>
+							<li><input disabled="" type="checkbox"> Integration with BT leads (contact us screen)</li>
+						</ul>
+					</li>
+				</ul>
+				<a href="#stretch-goals" id="stretch-goals" style="color: inherit; text-decoration: none;">
+					<h3>Stretch Goals</h3>
+				</a>
+				<ul>
+					<li><input disabled="" type="checkbox"> Ability to list and revert to a previous version of the site</li>
+					<li><input disabled="" type="checkbox"> Additional themes</li>
+					<li><input disabled="" type="checkbox"> Basic SEO optimization (metadata per page/etc)</li>
+					<li><input disabled="" type="checkbox"> Google Maps integration</li>
+					<li><input disabled="" type="checkbox"> Google Analytics integration</li>
+					<li><input disabled="" type="checkbox"> Integration with BT reviews (another embedded iframe)</li>
+				</ul>
+				<a href="#prerequisites" id="prerequisites" style="color: inherit; text-decoration: none;">
+					<h2>Prerequisites</h2>
+				</a>
+				<ul>
+					<li>The most recent <a href="https://nodejs.org/">NodeJS v14</a> is required to install Static Site CMS<ul>
+							<li>Check the NodeJS version with <code>node -v</code></li>
+							<li>Check the NPM version with <code>npm -v</code></li>
+							<li>Check the NPX version with <code>npx -v</code></li>
+						</ul>
+					</li>
+					<li>An active Internet connection is required for the API server</li>
+				</ul>
+				<a href="#installing-static-site-cms" id="installing-static-site-cms" style="color: inherit; text-decoration: none;">
+					<h2>Installing Static Site CMS</h2>
+				</a>
+				<ol>
+					<li>Download the newest source code <a href="https://github.com/buildertrend/spring21-uno-ssg/releases">release</a> of Static Site CMS</li>
+					<li>Unzip the project folder using a file archiver, such as <a href="https://www.7-zip.org/">7-Zip</a></li>
+					<li>Open the root of the <em>spring21-uno-ssg-{version}</em> folder in a terminal window</li>
+					<li>Execute <code>npm install</code> to install to install all build dependencies</li>
+				</ol>
+				<a href="#using-static-site-cms" id="using-static-site-cms" style="color: inherit; text-decoration: none;">
+					<h2>Using Static Site CMS</h2>
+				</a>
+				<p>See the <a href="readmes/CREATE-REACT-APP.md">create-react-app document</a> for React specific instructions.</p>
+				<a href="#starting-the-static-site-cms" id="starting-the-static-site-cms" style="color: inherit; text-decoration: none;">
+					<h3>Starting the Static Site CMS</h3>
+				</a>
+				<ol>
+					<li>Open the root of the <em>spring21-uno-ssg-{version}</em> folder in a terminal window</li>
+					<li>Execute <code>npm start</code> to start the development server</li>
+					<li>Wait for the &quot;you can now view static-site-cms in the browser&quot; prompt to appear</li>
+				</ol>
+				<a href="#editing-a-website-with-the-static-site-cms" id="editing-a-website-with-the-static-site-cms" style="color: inherit; text-decoration: none;">
+					<h3>Editing a Website with the Static Site CMS</h3>
+				</a>
+				<ol>
+					<li>Open a browser to <a href="http://localhost:3000/cms/brimstone.ddns.net/?action=edit">http://localhost:3000/cms/brimstone.ddns.net/?action=edit</a></li>
+					<li>Click the <strong>edit</strong> (:pencil2:) icon at the bottom-left of the window to open the sidebar<ol>
+							<li>Update the <strong>Title</strong> field text, as desired</li>
+							<li>Update the <strong>Body</strong> field text, as desired</li>
+							<li>Click the <strong>Save</strong> button to commit all changes<ul>
+									<li>Otherwise, click the <strong>Reset</strong> button to discard all changes</li>
+								</ul>
+							</li>
+						</ol>
+					</li>
+					<li>Click the <strong>left chevron</strong> (❰) icon to close the sidebar<ul>
+							<li>Reload the page to confirm that all changes were saved, if desired</li>
+						</ul>
+					</li>
+				</ol>
+				<a href="#student-contributors" id="student-contributors" style="color: inherit; text-decoration: none;">
+					<h2>Student Contributors</h2>
+				</a>
+				<p>See the <a href="readmes/CONTRIBUTING.md">contributing document</a> for instructions on contributing to this project.</p>
+				<ul>
+					<li>Morgan Haworth</li>
+					<li>Shannon Hire</li>
+					<li>Shihang Li</li>
+					<li>Jon Hermsen</li>
+					<li>Christopher Eilenstine</li>
+				</ul>
+				<a href="#resources" id="resources" style="color: inherit; text-decoration: none;">
+					<h2>Resources</h2>
+				</a>
+				<p>See our <a href="https://drive.google.com/drive/folders/1ImMBLCwlSMNFQC1P3Cz9PODjI74gK4vO">Google Drive</a> for all the documents and videos related to our project.</p>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="modules.html">Exports</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-function">
+						<a href="modules.html#usedomainparam" class="tsd-kind-icon">use<wbr>Domain<wbr>Param</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#usequeryparam" class="tsd-kind-icon">use<wbr>Query<wbr>Param</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#userelativeurl" class="tsd-kind-icon">use<wbr>RelativeURL</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#userooturl" class="tsd-kind-icon">use<wbr>RootURL</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
