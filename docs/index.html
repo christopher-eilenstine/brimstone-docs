@@ -61,6 +61,7 @@
 				<a href="#static-site-cms" id="static-site-cms" style="color: inherit; text-decoration: none;">
 					<h1>Static Site CMS</h1>
 				</a>
+				<p><a href="https://christopher-eilenstine.github.io/brimstone-docs/index.html">Documentation</a></p>
 				<p>Static Site CMS (Content Management System) is used to generate static sites for Buildertrend clients, including homebuilders and home remodelers. Such websites are used by clients for marketing to their own customers. Buildertrend provides this CMS in the form of an admin panel, where clients can edit their site content and integrate with other Buildertrend applications, such as contact forms for lead generation, a login page, and more.</p>
 				<p>This project is meant to replace the <a href="http://contourconstructionco.com/">demo website</a> that Buildertrend shows prospective clients. That website has integrations (as iframes) to the full Buildertrend application. Please note that the demo site has some features that should not be implemented, so check with the Buildertrend contact if any questions arise!</p>
 				<p>This project is based on the Buildertrend proof of concept, which they put together as a <a href="https://github.com/SamKirkland/static-site-cms">basic prototype</a>.</p>
@@ -77,25 +78,25 @@
 									<li><input checked="" disabled="" type="checkbox"> Make this as hacky as you want, it will be replaced!</li>
 								</ul>
 							</li>
-							<li><input disabled="" type="checkbox"> Any image/document uploads will be saved to the server separately and a link will be included in the JSON</li>
+							<li><input checked="" disabled="" type="checkbox"> Any image/document uploads will be saved to the server separately and a link will be included in the JSON</li>
 						</ul>
 					</li>
-					<li><input disabled="" type="checkbox"> Build out initial templates in React (see Website Admin.pdf)<ul>
-							<li><input disabled="" type="checkbox"> Home, Blank, Gallery, Showcase, Blog, Login, Contact</li>
+					<li><input checked="" disabled="" type="checkbox"> Build out initial templates in React (see Website Admin.pdf)<ul>
+							<li><input checked="" disabled="" type="checkbox"> Home, Blank, Gallery, Showcase, Blog, Login, Contact</li>
 						</ul>
 					</li>
-					<li><input disabled="" type="checkbox"> Example content for a generic template (some of these could be made into their own templates if desired)<ul>
-							<li><input disabled="" type="checkbox"> About/Employee, Floor Plan, Testimonials, Services, Privacy Policy, Process</li>
+					<li><input checked="" disabled="" type="checkbox"> Example content for a generic template (some of these could be made into their own templates if desired)<ul>
+							<li><input checked="" disabled="" type="checkbox"> About/Employee, Floor Plan, Testimonials, Services, Privacy Policy, Process</li>
 						</ul>
 					</li>
-					<li><input disabled="" type="checkbox"> At least two themes should be available—theme name should be stored in JSON<ul>
-							<li><input disabled="" type="checkbox"> Color variations supported by themes</li>
+					<li><input checked="" disabled="" type="checkbox"> At least two themes should be available—theme name should be stored in JSON<ul>
+							<li><input checked="" disabled="" type="checkbox"> Color variations supported by themes</li>
 							<li><input disabled="" type="checkbox"> Some basic design manipulation by theme</li>
 						</ul>
 					</li>
-					<li><input disabled="" type="checkbox"> Integrations (these are just iframes)<ul>
-							<li><input disabled="" type="checkbox"> Integration with the BT login form</li>
-							<li><input disabled="" type="checkbox"> Integration with BT leads (contact us screen)</li>
+					<li><input checked="" disabled="" type="checkbox"> Integrations (these are just iframes)<ul>
+							<li><input checked="" disabled="" type="checkbox"> Integration with the BT login form</li>
+							<li><input checked="" disabled="" type="checkbox"> Integration with BT leads (contact us screen)</li>
 						</ul>
 					</li>
 				</ul>
@@ -103,12 +104,12 @@
 					<h3>Stretch Goals</h3>
 				</a>
 				<ul>
-					<li><input disabled="" type="checkbox"> Ability to list and revert to a previous version of the site</li>
-					<li><input disabled="" type="checkbox"> Additional themes</li>
-					<li><input disabled="" type="checkbox"> Basic SEO optimization (metadata per page/etc)</li>
-					<li><input disabled="" type="checkbox"> Google Maps integration</li>
+					<li><input checked="" disabled="" type="checkbox"> Ability to list and revert to a previous version of the site</li>
+					<li><input checked="" disabled="" type="checkbox"> Additional themes</li>
+					<li><input checked="" disabled="" type="checkbox"> Basic SEO optimization (metadata per page/etc)</li>
+					<li><input checked="" disabled="" type="checkbox"> Google Maps integration</li>
 					<li><input disabled="" type="checkbox"> Google Analytics integration</li>
-					<li><input disabled="" type="checkbox"> Integration with BT reviews (another embedded iframe)</li>
+					<li><input checked="" disabled="" type="checkbox"> Integration with BT reviews (another embedded iframe)</li>
 				</ul>
 				<a href="#prerequisites" id="prerequisites" style="color: inherit; text-decoration: none;">
 					<h2>Prerequisites</h2>
@@ -130,6 +131,10 @@
 					<li>Unzip the project folder using a file archiver, such as <a href="https://www.7-zip.org/">7-Zip</a></li>
 					<li>Open the root of the <em>spring21-uno-ssg-{version}</em> folder in a terminal window</li>
 					<li>Execute <code>npm install</code> to install to install all build dependencies</li>
+					<li>Create a <em>.env</em> file with the following contents:<pre><code class="language-conf">REACT_APP_API_URI=http://brimstone.ddns.net:3001/api
+REACT_APP_MAP_KEY=YOUR_SECRET_KEY
+</code></pre>
+					</li>
 				</ol>
 				<a href="#using-static-site-cms" id="using-static-site-cms" style="color: inherit; text-decoration: none;">
 					<h2>Using Static Site CMS</h2>
@@ -149,8 +154,9 @@
 				<ol>
 					<li>Open a browser to <a href="http://localhost:3000/cms/brimstone.ddns.net/?action=edit">http://localhost:3000/cms/brimstone.ddns.net/?action=edit</a></li>
 					<li>Click the <strong>edit</strong> (:pencil2:) icon at the bottom-left of the window to open the sidebar<ol>
+							<li>Update the <strong>Path</strong> field text, as desired</li>
 							<li>Update the <strong>Title</strong> field text, as desired</li>
-							<li>Update the <strong>Body</strong> field text, as desired</li>
+							<li>Update the <strong>Sections</strong>, as desired</li>
 							<li>Click the <strong>Save</strong> button to commit all changes<ul>
 									<li>Otherwise, click the <strong>Reset</strong> button to discard all changes</li>
 								</ul>
@@ -185,22 +191,190 @@
 					<li class=" ">
 						<a href="modules.html">Exports</a>
 					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/components_routemanager.html">components/<wbr>Route<wbr>Manager</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/components_sitemanager.html">components/<wbr>Site<wbr>Manager</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/components_templatemanager.html">components/<wbr>Template<wbr>Manager</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/components_tinamanager.html">components/<wbr>Tina<wbr>Manager</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/components_error_404.html">components/error/404</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/components_error_missingcontent.html">components/error/<wbr>Missing<wbr>Content</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/components_layout_breadcrumb.html">components/layout/<wbr>Bread<wbr>Crumb</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/components_layout_footer.html">components/layout/<wbr>Footer</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/components_layout_header.html">components/layout/<wbr>Header</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/components_layout_loadingcontent.html">components/layout/<wbr>Loading<wbr>Content</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/components_layout_newdomainform.html">components/layout/<wbr>New<wbr>Domain<wbr>Form</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/components_modules_bloglistmodule.html">components/modules/<wbr>Blog<wbr>List<wbr>Module</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/components_modules_bylinemodule.html">components/modules/<wbr>Byline<wbr>Module</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/components_modules_carddeckmodule.html">components/modules/<wbr>Card<wbr>Deck<wbr>Module</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/components_modules_carouselmodule.html">components/modules/<wbr>Carousel<wbr>Module</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/components_modules_contactmodule.html">components/modules/<wbr>Contact<wbr>Module</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/components_modules_gallerylistmodule.html">components/modules/<wbr>Gallery<wbr>List<wbr>Module</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/components_modules_headingmodule.html">components/modules/<wbr>Heading<wbr>Module</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/components_modules_heromodule.html">components/modules/<wbr>Hero<wbr>Module</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/components_modules_imagemodule.html">components/modules/<wbr>Image<wbr>Module</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/components_modules_lightboxmodule.html">components/modules/<wbr>Lightbox<wbr>Module</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/components_modules_loginmodule.html">components/modules/<wbr>Login<wbr>Module</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/components_modules_mapmodule.html">components/modules/<wbr>Map<wbr>Module</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/components_modules_paragraphmodule.html">components/modules/<wbr>Paragraph<wbr>Module</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/components_modules_projectlistmodule.html">components/modules/<wbr>Project<wbr>List<wbr>Module</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/components_modules_sidebysidemodule.html">components/modules/<wbr>Side<wbr>BySide<wbr>Module</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/components_modules_testimonialsmodule.html">components/modules/<wbr>Testimonials<wbr>Module</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/hooks.html">hooks</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/index.html">index</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/interfaces.html">interfaces</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/plugins_newpagecreatorplugin.html">plugins/<wbr>New<wbr>Page<wbr>Creator<wbr>Plugin</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/templates_pages.html">templates/pages</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/templates_pages_about.html">templates/pages/<wbr>About</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/templates_pages_blank.html">templates/pages/<wbr>Blank</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/templates_pages_blog.html">templates/pages/<wbr>Blog</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/templates_pages_bloglist.html">templates/pages/<wbr>Blog<wbr>List</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/templates_pages_contact.html">templates/pages/<wbr>Contact</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/templates_pages_galleries.html">templates/pages/<wbr>Galleries</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/templates_pages_gallery.html">templates/pages/<wbr>Gallery</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/templates_pages_home.html">templates/pages/<wbr>Home</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/templates_pages_homeexamplesite3.html">templates/pages/<wbr>Home<wbr>Example<wbr>Site3</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/templates_pages_login.html">templates/pages/<wbr>Login</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/templates_pages_privacypolicy.html">templates/pages/<wbr>Privacy<wbr>Policy</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/templates_pages_process.html">templates/pages/<wbr>Process</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/templates_pages_project.html">templates/pages/<wbr>Project</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/templates_pages_services.html">templates/pages/<wbr>Services</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/templates_pages_showcase.html">templates/pages/<wbr>Showcase</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/templates_pages_testimonials.html">templates/pages/<wbr>Testimonials</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/templates_sites.html">templates/sites</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/templates_sites_defaultsite.html">templates/sites/<wbr>Default<wbr>Site</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/templates_sites_examplesite1.html">templates/sites/<wbr>Example<wbr>Site1</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/templates_sites_examplesite2.html">templates/sites/<wbr>Example<wbr>Site2</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/templates_sites_examplesite3.html">templates/sites/<wbr>Example<wbr>Site3</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/util.html">util</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/util_listgrouphelper.html">util/<wbr>List<wbr>Group<wbr>Helper</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/util_mediaclient.html">util/<wbr>Media<wbr>Client</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/util_mediamanager.html">util/<wbr>Media<wbr>Manager</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/util_sitemanagerhelper.html">util/<wbr>Site<wbr>Manager<wbr>Helper</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/util_sitethemehelper.html">util/<wbr>Site<wbr>Theme<wbr>Helper</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/util_versioninghelper.html">util/<wbr>Versioning<wbr>Helper</a>
+					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-function">
-						<a href="modules.html#usedomainparam" class="tsd-kind-icon">use<wbr>Domain<wbr>Param</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="modules.html#usequeryparam" class="tsd-kind-icon">use<wbr>Query<wbr>Param</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="modules.html#userelativeurl" class="tsd-kind-icon">use<wbr>RelativeURL</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="modules.html#userooturl" class="tsd-kind-icon">use<wbr>RootURL</a>
-					</li>
 				</ul>
 			</nav>
 		</div>
@@ -210,6 +384,17 @@
 	<div class="container">
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-namespace"><span class="tsd-kind-icon">Namespace</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+			</ul>
 		</div>
 	</div>
 </footer>
